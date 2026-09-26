@@ -7,6 +7,8 @@ export interface IEmployee extends Document {
   sueldo: number;
   createdAt?: Date;
   updatedAt?: Date;
+
+  
 }
 
 const empleadoSchema = new Schema<IEmployee>(

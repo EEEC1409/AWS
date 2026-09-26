@@ -22,7 +22,7 @@ module.exports = {
       path : '/var/www/backend-app',
       ssh_options: "IdentityFile=E:/AWS/par-claves-backend.pem",
       // Comando limpio: Sin "cd backend" y ejecutando pm2 reload desde la raíz
-      'post-deploy' : 'mkdir -p shared/logs && npm install && pm2 reload ecosystem.config.cjs --env production && pm2 save'
+      'post-deploy' : 'cd backend && mkdir -p shared/logs && npm install && pm2 reload ../ecosystem.config.cjs --env production && pm2 save'
     }
   }
 };

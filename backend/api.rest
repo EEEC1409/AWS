@@ -1,0 +1,41 @@
+### 1. Obtener todos los empleados (Éxito)
+GET http://localhost:3000/api/v1/employees
+Accept: application/json
+
+### 2. Creación Exitosa (Reto 2 - Response Wrapper)
+POST http://localhost:3000/api/v1/employees
+Content-Type: application/json
+
+{
+  "nombre": "Andrés Mendoza",
+  "cargo": "Arquitecto de Software",
+  "departamento": "Innovación",
+  "sueldo": 4500
+}
+
+### 3. Petición con Inyección Inválida (Reto 2 - Activación de Zod DTO con 400 Bad Request)
+POST http://localhost:3000/api/v1/employees
+Content-Type: application/json
+
+{
+  "nombre": "An",
+  "cargo": "Developer",
+  "departamento": "TI",
+  "sueldo": -200
+}
+
+### 4. Petición con Faltantes de Campos Obligatorios (Reto 2 - DTO Validation)
+POST http://localhost:3000/api/v1/employees
+Content-Type: application/json
+
+{
+  "nombre": "Carlos Gómez"
+}
+
+### 5. Actualización con ID Inválido en Params (Reto 2 - Params DTO Validation)
+PUT http://localhost:3000/api/v1/employees/123-id-invalido
+Content-Type: application/json
+
+{
+  "sueldo": 5000
+}

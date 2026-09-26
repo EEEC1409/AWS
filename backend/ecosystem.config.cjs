@@ -28,9 +28,8 @@ module.exports = {
       ref  : 'origin/main', 
       repo : 'git@github.com:EEEC1409/backend-aws.git', 
       path : '/var/www/backend-app', 
-      'post-deploy' : 'mkdir -p logs && npm install && pm2 reload ecosystem.config.cjs --env production && pm2 save', 
       ssh_options: "IdentityFile=E:/AWS/par-claves-backend.pem", // Ruta a tu llave .pem local 
-      'post-deploy': 'cd backend && mkdir -p logs && npm install && pm2 reload ecosystem.config.cjs --env production && pm2 save'
-    } 
+      'post-deploy': 'cd backend && mkdir -p logs && npm install && pm2 reload ../ecosystem.config.cjs --env production && pm2 save'
+    }   
   } 
 };
